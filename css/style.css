@@ -1,0 +1,395 @@
+@charset "UTF-8";
+/*Imports*/
+/*miscelaneous*/
+@import url("https://fonts.googleapis.com/css2?family=Bowlby+One+SC&family=Dancing+Script&family=Roboto:wght@400;500&display=swap");
+/*VARIABLES*/
+/* RESET CSS*/
+*,
+*::before,
+*::after {
+  margin: 0;
+  border: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none; }
+ 
+html{
+    background-color: #ffffff;
+    font-size: 62.5%;
+    font-family: "Roboto";
+    color: #000000;
+}
+
+ul {
+    list-style-type: none; }
+
+a {
+    text-decoration: none;
+    color: inherit;
+    display: inline-block; }
+
+/*Container*/
+    .container {
+        max-width: 1080px;
+        margin: 0 auto; }
+
+    header{
+        display: block;
+        background-color: #ffffff;
+    }
+
+/*Mixin flex*/
+/*Mixin for tittles and texts*/
+/*ANIMATIONS*/
+/*ANIMATION FOR TITTLES - H1*/
+h1 {
+    animation-name: h1;
+    animation-timing-function: ease-in;
+    animation-duration: 6s;
+    animation-delay: .5s;
+    animation-iteration-count: infinite; }
+  
+  @keyframes h1 {
+    0% {
+      color: #8a2be2; }
+    50% {
+      color: #9c50e4; }
+    75% {
+      color: #bc8ce9; }
+    100% {
+      color: #c7a6e6; } }
+
+
+
+
+
+
+    
+    /*partials*/
+    /*HEADER*/
+    header .navbar {
+        min-height: 10vh;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        gap: 0;
+        flex-wrap: wrap;
+        padding: 2rem; }
+    header .navbar .navbar__logo {
+        flex-basis: 30%; }
+    header .navbar .navbar__logo .logo__img {
+        width: 100%; }
+    header .navbar .navbar__label {
+        display: none; }
+    header .navbar .navbar__label .hambur__img {
+        height: 35px;
+        width: 100%; }
+    header .navbar .navbar__input {
+        display: none; }
+    header .navbar .navbar__input:checked + .navbar__menu {
+        background-color: none; }
+    header .navbar .navbar__menu {
+        flex-basis: 50%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        gap: 0.5rem;
+        flex-wrap: nowrap;
+        font-size: 1.3em;
+        text-align: center;
+        transition: all .5s; }
+    header .navbar .navbar__menu .menu__item, header .navbar .navbar__menu .menu__item--active {
+        border: none; }
+    header .navbar .navbar__menu .menu__item--active {
+        color: blueviolet;
+        border-bottom: .2rem solid blueviolet; }
+    header .navbar .navbar__menu .menu__item .menu__link, header .navbar .navbar__menu .menu__item--active .menu__link {
+        font-size: 1.8em;
+        padding: 1rem; }
+
+    /*MEDIA QUERY HEADER*/
+    /*TABLE*/
+    @media screen and (max-width: 720px) {
+      header .navbar .navbar__logo {
+        flex-basis: 50%; }
+        header .navbar .navbar__logo .logo__img {
+          width: 100%;
+          min-width: 150px; }
+      header .navbar .navbar__label {
+        display: block;
+        cursor: pointer; }
+      header .navbar .navbar__menu {
+        position: fixed;
+        top: 120px;
+        bottom: 0;
+        width: 100%;
+        left: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+        gap: 0;
+        flex-wrap: nowrap;
+        clip-path: circle(0 at center);
+        transition: clip-path 3s easy-in-out; }
+      header .navbar .navbar__input:checked + .navbar__menu {
+        background-color: #19062b;
+        clip-path: circle(100% at center); } }
+    
+    /*MOBILE ADAPTATION*/
+    @media screen and (max-width: 580px) {
+      header .navbar .navbar__menu {
+        position: fixed;
+        top: 105px;
+        bottom: 0;
+        width: 100%;
+        left: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+        gap: 0;
+        flex-wrap: nowrap;
+        clip-path: circle(0 at center);
+        transition: clip-path 3s easy-in-out; } }
+    
+    /*MOBILE*/
+    @media screen and (max-width: 480px) {
+      header .navbar .navbar__menu {
+        position: fixed;
+        top: 80px;
+        bottom: 0;
+        width: 100%;
+        left: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+        gap: 0;
+        flex-wrap: nowrap;
+        clip-path: circle(0 at center);
+        transition: clip-path 3s easy-in-out; }
+        header .navbar .navbar__menu .menu__item .menu__link, header .navbar .navbar__menu .menu__item--active .menu__link {
+          font-size: 1.6em; } }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*views*/
+/*INDEX HOME*/
+/*Banner*/
+.banner {
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 2rem; }
+    .banner__img {
+      width: 100%; }
+
+
+
+
+
+
+
+
+
+
+
+
+/*Welcome and introduction*/
+.section {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+    flex-wrap: nowrap;
+    background-color: #ffffff;
+    padding: 3rem; }
+    .section__picture {
+      flex-basis: 50%;
+      border-radius: 1rem; }
+      .section__picture .section__img {
+        width: 100%;
+        border-radius: 0.5rem;
+        padding: 0.5rem;
+        background-color: #9c50e4; }
+    .section__description {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+      gap: 2rem;
+      flex-wrap: wrap;
+      flex-basis: 50%;
+      color: #000000; }
+      .section__description .section__container h1 {
+        font-size: 5em;
+        font-weight: lighter;
+        font-style: normal;
+        letter-spacing: 1rem;
+        text-align: center;
+        font-family: "Bowlby One SC";
+        color: blueviolet; }
+      .section__description .section__container h2 {
+        font-size: 2em;
+        font-weight: lighter;
+        font-style: normal;
+        letter-spacing: 0;
+        text-align: justify;
+        color: #ff0000;
+        padding-bottom: 1.5rem; }
+      .section__description .section__container .section__h2:before {
+        content: "✨"; }
+      .section__description .section__container .section__h2:after {
+        content: "✨"; }
+      .section__description .section__container h3 {
+        font-size: 3em;
+        font-weight: lighter;
+        font-style: normal;
+        letter-spacing: 0;
+        text-align: center;
+        color: #ebdfae;
+        padding: 3rem; }
+      .section__description .section__container .section__h3:after {
+        content: "🪐"; }
+      .section__description .section__container p {
+        font-size: 2em;
+        font-weight: lighter;
+        font-style: normal;
+        letter-spacing: 0.1rem;
+        text-align: justify; }
+      .section__description .button {
+        font-size: 2em;
+        font-weight: bold;
+        color: #000000;
+        text-align: center;
+        background-color: aquamarine;
+        width: 15rem;
+        padding: 0.5rem 0;
+        border-radius: 3rem; }
+        .section__description .button:hover {
+          background-color: #2c9abb; }
+        .section__description .button:active {
+          background-color: #2c9abb;
+          transform: translateY(3px); }
+  
+  /*MEDIA QUERY INDEX*/
+  /*DESKTOP*/
+  @media screen and (max-width: 1024px) {
+    .section {
+      padding: 1.5rem; }
+      .section__description .section__container h1 {
+        font-size: 4em; } }
+  
+  /*TABLET*/
+  @media screen and (max-width: 720px) {
+    .section {
+      flex-wrap: wrap;
+      align-items: center; }
+      .section__picture {
+        flex-grow: 1;
+        padding: 0 1rem; }
+      .section__description {
+        flex-grow: 1;
+        order: -1;
+        align-items: center;
+        padding: 1rem; }
+        .section__description .section__container h1 {
+          font-size: 3em;
+          font-weight: lighter;
+          font-style: normal;
+          letter-spacing: 0.5rem;
+          text-align: center;
+          padding-bottom: 1.8rem; }
+        .section__description .section__container h2 {
+          font-size: 1.9em;
+          font-weight: lighter;
+          font-style: normal;
+          letter-spacing: 0;
+          text-align: justify; }
+        .section__description .section__container p {
+          font-size: 1.8em; } }
+  
+  /*MOBILE*/
+  @media screen and (max-width: 480px) {
+    .section__description .section__container h1 {
+      font-size: 2.7em;
+      font-weight: lighter;
+      font-style: normal;
+      letter-spacing: 0.5rem;
+      text-align: center;
+      padding-bottom: 1.8rem; }
+    .section__description .section__container h3 {
+      font-size: 2.6em;
+      font-weight: lighter;
+      font-style: normal;
+      letter-spacing: 0;
+      text-align: center;
+      padding: 1.5rem; }
+    .section__description .button {
+      font-size: 1.6em; } }
+  
+  /*SMALL MOBILE*/
+  @media screen and (max-width: 360px) {
+    .section__description .section__container h2 {
+      font-size: 1.6em;
+      font-weight: lighter;
+      font-style: normal;
+      letter-spacing: 0;
+      text-align: justify; }
+    .section__description .section__container h3 {
+      font-size: 2em;
+      font-weight: lighter;
+      font-style: normal;
+      letter-spacing: 0;
+      text-align: center;
+      padding: 0.5rem; }
+    .section__description .section__container p {
+      font-size: 1.6em;
+      font-weight: lighter;
+      font-style: normal;
+      letter-spacing: -0.01rem;
+      text-align: justify; }
+    .section__description .section__container .button {
+      font-size: 1.6em; } }
+  
+  /*SMALL MOBILE - SAMSUNG FOLD*/
+  @media screen and (max-width: 280px) {
+    .section__description .section__container h2 {
+      font-size: 1.5em;
+      font-weight: lighter;
+      font-style: normal;
+      letter-spacing: -0.01;
+      text-align: justify; }
+    .section__description .section__container h3 {
+      font-size: 1.9em;
+      font-weight: lighter;
+      font-style: normal;
+      letter-spacing: 0;
+      text-align: center; }
+    .section__description .section__container p {
+      font-size: 1.5em;
+      font-weight: lighter;
+      font-style: normal;
+      letter-spacing: 0;
+      text-align: justify; }
+    .section__description .section__container .button {
+      font-size: 1.6em; } }
+
+
+
+
+
